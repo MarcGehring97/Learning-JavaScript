@@ -33,5 +33,50 @@ switch(true) {
 }
 
 for(var i = 0; i <= 9; i++) {
-    console.log(i)
+    console.log(i);
 }
+
+var i = 0;
+
+while(i < 10) {
+    console.log(i);
+    i++;
+}
+
+// function declartion
+function calculateAge(yearOfBirth) {
+    return 2018 - yearOfBirth;
+}
+
+// function expression
+var returnName = function(name) {
+    return name;
+}
+
+
+// an object but not a class
+var john = {
+    firstName: "John",
+    lastName: "Johnson",
+    returnName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+john.firstName = "Peter";
+john["firstName"] = "Hugo";
+
+console.log(john.returnName());
+
+var names = ["Peter", "Hugo", 1, true];
+
+names[1] = "Paul";
+names.push(3);
+names.unshift("Add this");
+names.pop();
+john.shift();
+
+console.log(names[0]);
+console.log(names.length);
+
+
