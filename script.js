@@ -4,6 +4,8 @@
 comment
 */
 
+/*
+
 var firstname = "John";
 console.log(firstname);
 
@@ -79,5 +81,7 @@ john.shift();
 
 console.log(names[0]);
 console.log(names.length);
+
+*/
 
 
