@@ -68,6 +68,7 @@ john["firstName"] = "Hugo";
 
 console.log(john.returnName());
 
+// array
 var names = ["Peter", "Hugo", 1, true];
 
 names[1] = "Paul";
