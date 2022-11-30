@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Priprema</title>
+
+    <script>
+    function name(){
+
+        var name = document.getElementById("name").value;
+        var pattern = /[a-zA-Z]+\s[a-zA-Z]/;
+
+        if(!name.match(pattern)){
+            alert("Please insert your name, then space, and then your surname");
+            return false;
+        }
+        if(name.length < 3){
+            alert("Your name and surname must have more then 3 characters");
+            return false;
+        }
+
+        return true;
+    }
+
+    function color(){
+
+        var color = document.getElementById("color").value;
+
+            var printHere =  document.getElementById("printName");
+
+        switch(color) {
+
+        case 'green': 
+           printHere.style.color = "green";
+           printHere.innerHTML = document.getElementById("name").value;
+           break;
+
+        case 'red': 
+           printHere.style.color = "red";
+           printHere.innerHTML = document.getElementById("name").value;
+           break;
+
+        case 'blue': 
+           printHere.style.color = "blue";
+           printHere.innerHTML = document.getElementById("name").value;
+           break;
+        default:
+            alert("Please choose a color.");
+        }
+    }
+
+
+    function confirmData() {
+
+        var confirmData = document.getElementById("userData").checked;
+
+        if(confirmData == true){
+            document.getElementById("toCheck").disabled = false;
+            return true;
+        } else {
+            document.getElementById("toCheck").disabled = true;
+            return false;
+        }
+    }
+
+    function validation() {
+
+        if(name()){
+            if(color()){
+                if(confirmData()){
+                    window.alert("Thank you");
+                    return true;
+                }
+            }
+        } else {
+            return false;
+        }
+    }
+    </script>
+</head>
+<body>
+  
+    <br/>
+Exercise 1<hr/>
+Please fill in your name and surname: <input type="text" id="name" value=""/>
+<br/>
+Choose color: <select id="color">
+    <option>choose</option>
+    <option>green</option>
+    <option>blue</option>
+    <option>red</option>
+</select>
+<br/>
+Do you wish to print the data?
+<input type="checkbox" id="userData" onclick="confirmData()"/>
+<br/>
+<input type="button" value="I confirm" id="toCheck" 
+    disabled="true" onclick="validation()"/>
+<p id="printName"></p>
+
+
+</body>
+</html>
