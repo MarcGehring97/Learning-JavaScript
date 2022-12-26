@@ -85,3 +85,49 @@ console.log(names.length);
 */
 
 
+const x = 1;
+let y = 2;
+// are block-scoped
+const z = 'thishaha';
+
+console.log(`This is ${x}`);
+// to write strings more easily
+
+// other useful functions are:
+console.log(z.startsWith("j"));
+console.log(z.endsWith("j"));
+console.log(z.includes("j"));
+
+// use the map function to apply a function to all functions in an array
+
+var a = [123, 123, 1345, 1345, 12345];
+var b = a.map(function(x) {return 2000 - x});
+console.log(b);
+
+// alternatively:
+
+var c = a.map((x, index) => 2000 - x + index);
+// the second argument is the index in the array
+console.log(c);
+
+// the spread operator ... takes elements out of an array
+
+const family1 = ['Peter', 'Jane'];
+const familty2 = [...family1, 'Jorg'];
+
+// the rest operator turns single values into a value array
+
+// maps are a data structure like dictionaries for which the keys can be of any type
+
+const test1 = new Map();
+test1.set(true, 'output');
+test1.set(1, 'thisIs');
+console.log(test1);
+console.log(test1.get(true));
+// test1.delete(1);
+// console.log(test1.has(1));
+// test1.clear();
+
+test1.forEach((value, key) => console.log(value, key));
+
+// there are also classes in JavaScript => are not hoisted
