@@ -82,7 +82,7 @@ john.shift();
 console.log(names[0]);
 console.log(names.length);
 
-*/
+
 
 
 const x = 1;
@@ -131,3 +131,46 @@ console.log(test1.get(true));
 test1.forEach((value, key) => console.log(value, key));
 
 // there are also classes in JavaScript => are not hoisted
+
+// make JS asynchronous with the setTimeout function
+function test2() {
+    console.log("Hi1");
+    setTimeout(() => {console.log("Hi2");}, 1000);
+    console.log("Hi3");
+}
+
+test2();
+
+// create a promise object that always resolves by outputting a string
+const getIDs = new Promise((resolve, reject) => {
+    resolve("Hi4");
+});
+
+// getting the result of the fulfilled promise
+getIDs.then(IDs => {
+    console.log(IDs);
+});
+
+// one can also catch rejections
+getIDs.catch(error => {console.log(error);});
+
+// to consume promises in a structured manner; the async function runs in the background => callback
+async function test3() {
+    const IDs = await getIDs;
+    console.log(IDs);
+}
+
+test3().then(IDs => {console.log(IDs)});
+
+*/
+
+// programming a JS API
+// returns a promise => consume it
+// convert JSON to JS object
+// the JSON method also returns a promise
+
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(results => {return results.json();})
+    .then(data => {console.log(data);})
+    .catch();
+
